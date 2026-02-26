@@ -8,12 +8,14 @@ import {
   Search, 
   Wrench,
   Menu,
-  X
+  X,
+  BarChart2
 } from 'lucide-react';
 import { ModeToggle } from './mode-toggle';
 
 const navItems = [
   { name: 'Dashboard', path: '/', icon: LayoutDashboard },
+  { name: 'Usage Stats', path: '/usage', icon: BarChart2 },
   { name: 'YouTube Tools', path: '/youtube', icon: Youtube },
   { name: 'Trading Tools', path: '/trading', icon: TrendingUp },
   { name: 'SEO Tools', path: '/seo', icon: Search },

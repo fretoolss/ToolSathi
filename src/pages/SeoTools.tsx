@@ -2,6 +2,7 @@ import React from 'react';
 import { toolsList } from './Dashboard';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { SEO } from '../components/seo';
 
 export default function SeoTools() {
   const category = toolsList.find(c => c.category === 'SEO Tools');
@@ -9,6 +10,13 @@ export default function SeoTools() {
   if (!category) return null;
 
   return (
+    <>
+      <SEO 
+        title="SEO Tools & Utilities" 
+        description="Free SEO tools including Keyword Density Checker, FAQ Schema Generator, Meta Description Generator, and Word Counter."
+        keywords="seo tools, keyword density checker, faq schema generator, meta description generator, word counter"
+        canonicalUrl="https://toolsathi.com/seo"
+      />
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">SEO Tools</h1>
@@ -34,5 +42,6 @@ export default function SeoTools() {
         })}
       </div>
     </motion.div>
+    </>
   );
 }

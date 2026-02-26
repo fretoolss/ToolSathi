@@ -2,6 +2,7 @@ import React from 'react';
 import { toolsList } from './Dashboard';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { SEO } from '../components/seo';
 
 export default function YoutubeTools() {
   const category = toolsList.find(c => c.category === 'YouTube Tools');
@@ -9,6 +10,13 @@ export default function YoutubeTools() {
   if (!category) return null;
 
   return (
+    <>
+      <SEO 
+        title="YouTube Tools" 
+        description="AI-powered YouTube tools including Viral Title Generator, Shorts Hook Generator, Tag Generator, and Thumbnail Analyzer to help you grow your channel."
+        keywords="youtube tools, youtube title generator, youtube tags, youtube thumbnail analyzer, shorts hook generator"
+        canonicalUrl="https://toolsathi.com/youtube"
+      />
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">YouTube Tools</h1>
@@ -34,5 +42,6 @@ export default function YoutubeTools() {
         })}
       </div>
     </motion.div>
+    </>
   );
 }

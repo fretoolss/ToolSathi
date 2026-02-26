@@ -2,6 +2,7 @@ import React from 'react';
 import { toolsList } from './Dashboard';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { SEO } from '../components/seo';
 
 export default function TradingTools() {
   const category = toolsList.find(c => c.category === 'Trading Tools');
@@ -9,6 +10,13 @@ export default function TradingTools() {
   if (!category) return null;
 
   return (
+    <>
+      <SEO 
+        title="Trading Tools & Calculators" 
+        description="Free trading tools including Risk Reward Calculator, Position Size Calculator, DCA Calculator, and Crypto Profit Calculator."
+        keywords="trading calculators, risk reward calculator, position size calculator, dca calculator, crypto profit calculator"
+        canonicalUrl="https://toolsathi.com/trading"
+      />
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Trading Tools</h1>
@@ -34,5 +42,6 @@ export default function TradingTools() {
         })}
       </div>
     </motion.div>
+    </>
   );
 }

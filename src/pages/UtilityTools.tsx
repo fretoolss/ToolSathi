@@ -2,6 +2,7 @@ import React from 'react';
 import { toolsList } from './Dashboard';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { SEO } from '../components/seo';
 
 export default function UtilityTools() {
   const category = toolsList.find(c => c.category === 'Utility Tools');
@@ -9,6 +10,13 @@ export default function UtilityTools() {
   if (!category) return null;
 
   return (
+    <>
+      <SEO 
+        title="Utility Tools & Converters" 
+        description="Free utility tools including QR Code Generator, Percentage Calculator, Age Calculator, EMI Calculator, Image Compressor, and PDF to JPG converter."
+        keywords="utility tools, qr code generator, percentage calculator, age calculator, emi calculator, image compressor, pdf to jpg"
+        canonicalUrl="https://toolsathi.com/utility"
+      />
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Utility Tools</h1>
@@ -34,5 +42,6 @@ export default function UtilityTools() {
         })}
       </div>
     </motion.div>
+    </>
   );
 }

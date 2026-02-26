@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { cn } from '../lib/utils';
+import { SEO } from '../components/seo';
 import { 
   Youtube, 
   TrendingUp, 
@@ -21,7 +22,11 @@ import {
   Calendar,
   CreditCard,
   Minimize,
-  FileImage
+  FileImage,
+  Zap,
+  Coins,
+  Code,
+  QrCode
 } from 'lucide-react';
 
 export const toolsList = [
@@ -33,6 +38,7 @@ export const toolsList = [
     path: '/youtube',
     tools: [
       { name: 'Viral Title Generator', path: '/youtube/viral-title', icon: Type, desc: 'AI-powered click-worthy titles' },
+      { name: 'Shorts Hook Generator', path: '/youtube/shorts-hook', icon: Zap, desc: 'Viral hooks for Shorts/Reels' },
       { name: 'Tag Generator', path: '/youtube/tags', icon: Tags, desc: 'High-volume SEO tags for videos' },
       { name: 'Thumbnail Analyzer', path: '/youtube/thumbnail-analyzer', icon: ImageIcon, desc: 'Predict CTR for your headlines' },
     ]
@@ -45,6 +51,7 @@ export const toolsList = [
     path: '/trading',
     tools: [
       { name: 'Risk Reward Calculator', path: '/trading/risk-reward', icon: Calculator, desc: 'Calculate R:R ratio instantly' },
+      { name: 'DCA Calculator', path: '/trading/dca', icon: Coins, desc: 'Dollar Cost Averaging strategy' },
       { name: 'Position Size', path: '/trading/position-size', icon: PieChart, desc: 'Determine exact lot sizes' },
       { name: 'Crypto Profit', path: '/trading/crypto-profit', icon: Bitcoin, desc: 'Calculate potential crypto gains' },
       { name: 'Compounding', path: '/trading/compounding', icon: LineChart, desc: 'Visualize portfolio growth' },
@@ -58,6 +65,7 @@ export const toolsList = [
     path: '/seo',
     tools: [
       { name: 'Keyword Density', path: '/seo/keyword-density', icon: FileText, desc: 'Analyze text keyword frequency' },
+      { name: 'FAQ Schema Generator', path: '/seo/faq-schema', icon: Code, desc: 'Generate JSON-LD FAQ schema' },
       { name: 'Meta Description', path: '/seo/meta-description', icon: AlignLeft, desc: 'AI-generated SEO descriptions' },
       { name: 'Word Counter', path: '/seo/word-counter', icon: Type, desc: 'Count words, chars, and reading time' },
     ]
@@ -69,6 +77,7 @@ export const toolsList = [
     bgColor: 'bg-amber-500/10',
     path: '/utility',
     tools: [
+      { name: 'QR Code Generator', path: '/utility/qr-code', icon: QrCode, desc: 'Create custom QR codes' },
       { name: 'Percentage Calc', path: '/utility/percentage', icon: Percent, desc: 'Quick percentage calculations' },
       { name: 'Age Calculator', path: '/utility/age', icon: Calendar, desc: 'Calculate exact age in days/months' },
       { name: 'EMI Calculator', path: '/utility/emi', icon: CreditCard, desc: 'Loan EMI and interest calculator' },
@@ -80,11 +89,18 @@ export const toolsList = [
 
 export default function Dashboard() {
   return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="space-y-8"
-    >
+    <>
+      <SEO 
+        title="ToolSathi - Smart Tools for Smart Creators" 
+        description="ToolSathi provides AI-powered YouTube tools, trading calculators, SEO utilities, and everyday tools to help creators and professionals grow."
+        keywords="youtube tools, trading calculators, seo tools, utility tools, toolsathi"
+        canonicalUrl="https://toolsathi.com/"
+      />
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="space-y-8"
+      >
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
           <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">Welcome to ToolSathi</h1>
@@ -148,5 +164,6 @@ export default function Dashboard() {
       </div>
 
     </motion.div>
+    </>
   );
 }
